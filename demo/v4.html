@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Had To Share Demo</title>
+</head>
+<style type="text/css">
+.container-one,
+.container-two {
+    min-width: 200px;
+    min-height: 100px;
+    margin: 10px;
+}
+
+.container-one {
+    border: 1px solid red;
+}
+
+.container-two {
+    border: 1px solid blue;
+}
+</style>
+
+<body>
+    <nav>
+    </nav>
+    <section>
+        <div class="container-one"></div>
+        <div class="container-two"></div>
+        <div class="container had-to-share">
+            <script>
+            window.H2SConfig = {
+                debugMode: true,
+                htmlContainerSelector: '.container-two',
+                ready: function(event) {
+                    console.log('do work');
+                }
+            }
+            </script>
+            <script async data-namespace="Demo" src="./hadtoshare.min.js"></script>
+        </div>
+    </section>
+</body>
+
+</html>

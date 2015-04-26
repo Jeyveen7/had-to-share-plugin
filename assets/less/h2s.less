@@ -1,0 +1,65 @@
+// Note: This is purely for illustration. Start by pulling those variables into their own file and importing here.
+@white: #fff;
+@black: #222;
+@lightGray: #ccc;
+@darkGray: #666;
+////////////////////////////////////////////
+@plugin-height: 30px;
+@plugin-width: 150px;
+@gap: 20px;
+@small-padding: 10px;
+@container-border-radius: 3px;
+@thin: 1px;
+@plugin-logo-width: 30px;
+@small-font: 10px;
+////////////////////////////////////////////
+.font-settings() {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: Helvetica;
+}
+
+.small-font() {
+    font-size: @small-font;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+////////////////////////////////////////////
+.h2s-plugin {
+    .font-settings();
+    height: @plugin-height;
+    min-width: @plugin-width;
+    max-width: @plugin-width;
+    padding: @gap;
+    margin: @gap;
+    border-radius: @container-border-radius;
+    border: @thin solid @lightGray;
+    float: right;
+    position: relative;
+}
+
+.branding {
+    img {
+        width: @plugin-logo-width;
+        position: absolute;
+        left: @small-padding;
+        bottom: @small-padding;
+    }
+    span {
+        .small-font();
+        position: absolute;
+        left: @small-padding;
+        top: 0;
+    }
+}
+
+.share-target {
+    width: @plugin-logo-width;
+    position: absolute;
+    right: @small-padding;
+    bottom: @small-padding;
+    &:hover {
+        cursor: pointer;
+    }
+}
